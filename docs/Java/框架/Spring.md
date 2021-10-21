@@ -47,9 +47,10 @@ session : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在�
 3.1 Spring事务失效的原因
 
 - 不是Spring容器管理的类
-- 不是public方法也没有用AspectJ
+- 不是public
 - 类自身方法调用
 - 异常:异常没被捕获或者异常被提前捕获
+- 多线程 
 
 3.1 Spring事务的隔离级别 3.2  
 
