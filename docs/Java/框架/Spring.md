@@ -88,6 +88,14 @@ session : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在�
 
 3.1 Spring事务的隔离级别 3.2  
 
+## Spring环境属性源
+1. JVM系统属性
+2. 操作系统环境变量
+3. 命令行参数
+4. 应用属性配置文件（Application.properties,Application.yaml）
+5. 中心化的配置服务器
+
+
 
 
 

@@ -1,5 +1,5 @@
 ## docker
-### 操作所有容器的命令
+### 一次性操作所有容器的命令
 - docker中 启动所有的容器命令
   `docker start $(docker ps -a | awk '{ print $1}' | tail -n +2)`
 - docker中 关闭所有的容器命令
