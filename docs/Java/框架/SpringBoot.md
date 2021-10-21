@@ -20,7 +20,17 @@
 ```
 
 ## SpringBoot 自动配置原理
-
+1. 启动SpringBootApplication类
+   run方法内会有new SpringApplication(primarySources).run(args);
+2. 初始化容器 
+   setInitializers((Collection) getSpringFactoriesInstances(
+   ApplicationContextInitializer.class));
+3. 加载所有Factory
+   set<String> names = new LinkedHashSet<>(
+   SpringFactoriesLoader.loadFactoryNames(type, classLoader));
+4. 用classloader加载spring.factories文件
+5. spring.factories内都是Configuration注解的配置类的路径
+6. 配置类就会告诉Spring要把这些Bean加载到容器里面去
 
 
 
