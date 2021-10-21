@@ -11,9 +11,22 @@
 ## IOC
 1. Java是纯面向对象语言，完成一个功能需要多个对象协作，就会存在对象间关系。 这些关系包括依赖，关联，聚合，组合。IOC容器本质就是为了解决对象间耦合的问题。
 2. 容器创建
+
+## Spring Bean 相关注解
+1. @Autowired
+- @Autowired自动装配对象到属性，通常采用构造注入的方式能避免warning
+- @Resource是Java注解
+2. 自动装配
+以下注解被标识的类会被Spring扫描，加入IOC容器
+- @Component ：通用的注解，可标注任意类为 Spring 组件。如果一个 Bean 不知道属于哪个层，可以使用@Component 注解标注。
+- @Repository : 对应持久层即 Dao 层，主要用于数据库相关操作。
+- @Service : 对应服务层，主要涉及一些复杂的逻辑，需要用到 Dao 层。
+- @Controller : 对应 Spring MVC 控制层，主要用于接受用户请求并调用 Service 层返回数据给前端页面。
+
 3. Bean生命周期
 4. Bean循环依赖问题
-5. Bean 的作用域
+5. 
+6. Bean 的作用域
 
 `
 @Scope
@@ -37,20 +50,41 @@ session : 每一次 HTTP 请求都会产生一个新的 bean，该 bean 仅在�
 1. 
 
 
-## 常用注解
-1. 自动注入 @Autowired和@Resource
-2. 标识Bean，并且把Bean注入容器 2.1 Service 2.2 Controller 2.3 Repository 2.4 Component 2.5 Bean
-   使用第三方类库的时候无法添加注解把Bean加入容器,可以通过该注解加在方法上。 同时可以实现类似OnConditional的功能。
 
-3. Spring事务的七个传播级别
+## 配置化参数
+1. @Value("${}")
+2. @ConfigurationProperties(常用)
+## 参数校验
+1. spring-boot-starter-validation 会加入 hibernate-validator
+2. 常用参数注解
+ @NotEmpty 被注释的字符串的不能为 null 也不能为空
+   @NotBlank 被注释的字符串非 null，并且必须包含一个非空白字符
+   @Null 被注释的元素必须为 null
+   @NotNull 被注释的元素必须不为 null
+   @AssertTrue 被注释的元素必须为 true
+   @AssertFalse 被注释的元素必须为 false
+   @Pattern(regex=,flag=)被注释的元素必须符合指定的正则表达式
+   @Email 被注释的元素必须是 Email 格式。
+   @Min(value)被注释的元素必须是一个数字，其值必须大于等于指定的最小值
+   @Max(value)被注释的元素必须是一个数字，其值必须小于等于指定的最大值
+   @DecimalMin(value)被注释的元素必须是一个数字，其值必须大于等于指定的最小值
+   @DecimalMax(value) 被注释的元素必须是一个数字，其值必须小于等于指定的最大值
+   @Size(max=, min=)被注释的元素的大小必须在指定的范围内
+   @Digits (integer, fraction)被注释的元素必须是一个数字，其值必须在可接受的范围内
+   @Past被注释的元素必须是一个过去的日期
+   @Future 被注释的元素必须是一个将来的日期
+
+
+   
+## Spring 事务
+5. Spring事务的七个传播级别
 
 3.1 Spring事务失效的原因
-
-- 不是Spring容器管理的类
 - 不是public
 - 类自身方法调用
 - 异常:异常没被捕获或者异常被提前捕获
-- 多线程 
+- 多线程
+- 不是Spring容器管理的类
 
 3.1 Spring事务的隔离级别 3.2  
 

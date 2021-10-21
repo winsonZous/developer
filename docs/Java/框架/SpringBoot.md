@@ -1,10 +1,11 @@
 
-## SpringBootApplication
+## @SpringBootApplication
 ```
 @SpringBootApplication 是一个方便的注释，它添加了以下所有内容：
-@Configuration：将类标记为应用程序上下文的 bean 定义源。
+@Configuration：将类标记为应用程序上下文的 bean 定义源,进而Spring 上下文中注册额外的 bean 。
 @EnableAutoConfiguration：告诉 Spring Boot 根据类路径设置、其他 bean 和各种属性设置开始添加 bean。例如，如果spring-webmvc在类路径上，此注释将应用程序标记为 Web 应用程序并激活关键行为，例如设置DispatcherServlet.
 @ComponentScan：告诉 Spring 在包中查找其他组件、配置和服务com/example，让它找到控制器。
+默认扫描的是@SpringBootApplication标注的类所在的包
 ```
 
 ## 可执行Jar
