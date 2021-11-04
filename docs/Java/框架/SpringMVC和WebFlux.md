@@ -19,6 +19,20 @@
 `
 - 
 
+## SpringBoot Web模块与Http Client
+Java社区中的Http Client 
+- JDK的 HttpUrlConnection 
+- Apache commons的HttpClient 
+- Square公司的okHttp
+- Spring Web 模块的ResTemplate
+
+这些都是实现http协议的优秀框架，不过http本身也有许多缺点
+### 优秀的 HTTP Client 需要具备的特性
+- 连接池 HTTP 1.1 不支持多路复用，只有 HTTP Pipeline 这用半复用的模型支持。
+- 超时时间设置（连接超时、读取超时等）当对端出现问题的时候，长时间的，甚至是无限的超时等待是绝对不能接受的。所以必须必须能够设置超时时间。
+- 是否支持异步 即使HTTP 协议栈是基于非阻塞 IO 实现的，调用客户端的或者在服务端处理消息的线程有大量时间被浪费在了等待 IO 上面。
+- 请求和响应的编解码 http框架主要是帮助开发者降低对网络协议的编码和解码的工作
+- 可扩展性 能否自定义读写消息的格式转换，异常处理
 #### 前后端传值注解
 
 
