@@ -3,6 +3,8 @@
 ## SpringMVC
 在SpringBoot中SpringMVC被封装成RestFul Web模块，不再使用Modol and View模式。
 实现http接口的主要区别是把Java对象处理JSON添加到Http的响应报文里面。
+- SpringMVC的请求流程
+
 
 ###HTTP 请求类型
 ####5 种常见的请求类型:
@@ -13,11 +15,9 @@
 - PATCH : 更新服务器上的资源（客户端提供更改的属性，可以看做作是部分更新），使用的比较少，这里就不举例子了。
 
 #### 常用注解
-- @RestController
-`
-  @RestController=@Controller + @ResponseBody  
-`
-- 
+- @RestController=@Controller + @ResponseBody
+
+
 
 ## SpringBoot Web模块与Http Client
 Java社区中的Http Client 
@@ -33,6 +33,7 @@ Java社区中的Http Client
 - 是否支持异步 即使HTTP 协议栈是基于非阻塞 IO 实现的，调用客户端的或者在服务端处理消息的线程有大量时间被浪费在了等待 IO 上面。
 - 请求和响应的编解码 http框架主要是帮助开发者降低对网络协议的编码和解码的工作
 - 可扩展性 能否自定义读写消息的格式转换，异常处理
+
 #### 前后端传值注解
 
 

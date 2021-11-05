@@ -33,8 +33,6 @@
 5. spring.factories内都是Configuration注解的配置类的路径
 6. 配置类就会告诉Spring要把这些Bean加载到容器里面去
 
-
-
 ## 测试用例编写
 
 参考: SpringBoot官方文档 https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/
