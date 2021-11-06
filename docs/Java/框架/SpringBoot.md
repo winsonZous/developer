@@ -33,6 +33,14 @@
 5. spring.factories内都是Configuration注解的配置类的路径
 6. 配置类就会告诉Spring要把这些Bean加载到容器里面去
 
+
+### 条件注解
+@ConditionalOnBean（仅仅在当前上下文中存在某个对象时，才会实例化一个Bean）
+@ConditionalOnClass（某个class位于类路径上，才会实例化一个Bean）
+@ConditionalOnExpression（当表达式为true的时候，才会实例化一个Bean）
+@ConditionalOnMissingBean（仅仅在当前上下文中不存在某个对象时，才会实例化一个Bean）
+@ConditionalOnMissingClass（某个class类路径上不存在的时候，才会实例化一个Bean）
+@ConditionalOnNotWebApplication（不是web应用）
 ## 测试用例编写
 
 参考: SpringBoot官方文档 https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/
