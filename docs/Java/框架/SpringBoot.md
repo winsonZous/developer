@@ -44,3 +44,6 @@
 ## 测试用例编写
 
 参考: SpringBoot官方文档 https://docs.spring.io/spring-boot/docs/2.1.0.RELEASE/reference/htmlsingle/
+ALTER USER ‘root’@‘localhost’ IDENTIFIED WITH mysql_native_password BY “@bobtombobA”;
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '@bobtombobA';
