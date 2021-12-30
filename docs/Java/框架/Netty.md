@@ -7,6 +7,8 @@
 1. Linux网络IO模型
 2. IO多路复用技术
 
+### Socket 和 ServerSocket
+
 ### 4种IO模型
 
 1. BIO
@@ -36,9 +38,11 @@
 ```
 
 3. TCP粘包异常案例
+
 ```
 
 ```
+
 4. LineBasedFrameDecoder解决TCP粘包问题
 
 ## 第二部分 Netty编解码开发
