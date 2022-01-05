@@ -1,9 +1,15 @@
-## HashMap是常用的键值对，是哈希散列在Java中的实现
+## HashMap
+
+```
+是哈希散列在Java中的实现
+```
 
 - put 方法
 
 ### 源码阅读
+
 - get方法
+
 ```
     /**
      * Returns the value to which the specified key is mapped,
@@ -59,6 +65,7 @@
 ```
 
 - put方法
+
 ```
 /**
      * Associates the specified value with the specified key in this map.
@@ -145,6 +152,7 @@
 ```
 
 - resize()扩容方法
+
 ```
 /**
      * Initializes or doubles table size.  If null, allocates in
@@ -231,6 +239,7 @@
 ```
 
 ## HashSet源码阅读
+
 ```
 // Dummy value to associate with an Object in the backing Map
     private static final Object PRESENT = new Object();
@@ -257,4 +266,16 @@
     }
 ```
 
+## HashMap常见面试题
+
+1. HashMap与HashtSet的联系
+
+```
 上述构造方法中，HashSet底层是new HashMap(),只采用HashMap的key部分，Value部分只采用dummy的一个Object
+```
+
+2. HashMap与Hashtable
+
+```
+HashMap键值允许为null，键值都不允许为null
+```
