@@ -78,3 +78,24 @@ firewall-cmd --reload
 1、firwall-cmd：是Linux提供的操作firewall的一个工具；
 2、--permanent：表示设置为持久；
 3、--add-port：标识添加的端口；
+
+
+# 检查硬件配置
+1、du -sh 查看当前目标的空间大小
+2、top命令
+shift+P CPU消耗大小排序
+shift+M 查看消耗内存大小排序
+load average 1分钟 5分钟 10分钟的负载
+
+3、查看端口占用
+netstat -nlp | grep 端口号
+ps -ef | grep 进程
+kill -9 进程号 （通过SIGTERM）
+
+# 常见问题
+1. kill 与kill -9 区别
+```
+1、kill -9 id：一般不加参数kill是使用15来杀，这相当于正常停止进程，停止进程的时候会释放进程所占用的资源；他们的区别就好比电脑关机中的软关机（通过“开始”菜单选择“关机”）与硬关机（直接切断电源），虽然都能关机，但是程序所作的处理是不一样的。
+2、kill - 9 表示强制杀死该进程；而 kill 则有局限性，例如后台进程，守护进程等；
+3、执行kill命令，系统会发送一个SIGTERM信号给对应的程序。SIGTERM多半是会被阻塞的。kill -9命令，系统给对应程序发送的信号是SIGKILL，即exit。exit信号不会被系统阻塞，所以kill -9能顺利杀掉进程。
+```
